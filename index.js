@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome, this is a webhook for SE NPRU Line Chatbot !!!</h1>");
+  res.send("<h1>Welcome, this is a webhook for Line Chatbot !!!</h1>");
 });
 
 app.post("/webhook", (req, res) => {
@@ -145,7 +145,7 @@ app.post("/webhook", (req, res) => {
     agent.add(payload);
     // agent.add(result);
   }
-  function calculatorRectangleArea(agent) {
+  function calculateRectangleArea(agent) {
     let wide = agent.parameters.wide;
     let length = agent.parameters.length;
     let result = wide * length;
@@ -154,7 +154,7 @@ app.post("/webhook", (req, res) => {
         wide +
         " ซม. ยาว " +
         length +
-        " = " +
+        " =  " +
         result +
         "ตร.ซม."
     );
@@ -163,8 +163,8 @@ app.post("/webhook", (req, res) => {
   let intentMap = new Map();
   intentMap.set("Default Welcome Intent", welcome);
   intentMap.set("Default Fallback Intent", fallback);
-  intentMap.set("BMI - custom - yes", bodyMassIndex);
-  intentMap.set("Area - rectangle - custom - yes", calculatorRectangleArea);
+  intentMap.set("BMI - custom - YES", bodyMassIndex);
+  intentMap.set("area - rectangle - custom - yes", calculateRectangleArea);
   agent.handleRequest(intentMap);
 });
 
