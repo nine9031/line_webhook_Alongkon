@@ -1,7 +1,7 @@
 {
   "name": "line-webhook",
   "version": "1.0.0",
-  "description": "this is a webnook for line chatbot",
+  "description": "this is a webhook for line chatbot, SE-NPRU",
   "main": "index.js",
   "engines": {
     "node": "10"
@@ -10,11 +10,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-
   },
   "keywords": [
     "line",
-    "chat",
+    "chatbot",
     "webhook"
   ],
   "author": "Alongkon Natphunwat",
@@ -22,6 +21,6 @@
   "dependencies": {
     "express": "^4.19.2",
     "actions-on-google": "^2.2.0",
-    "dialogflow-fulfillment": "^0.5.0"
+    "dialogflow-fulfillment": "^0.6.1"
   }
 }
