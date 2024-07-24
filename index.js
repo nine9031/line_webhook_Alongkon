@@ -139,7 +139,7 @@ app.post("/webhook", (req, res) => {
     let payload = new Payload(`LINE`, flexMessage, {
       sendAsMessage: true,
     });
-    agent.add(result);
+    agent.add(payload);
   }
   let intentMap = new Map();
   intentMap.set("Default Welcome Intent", welcome);
