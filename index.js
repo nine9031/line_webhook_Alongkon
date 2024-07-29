@@ -169,7 +169,7 @@ app.post("/webhook", (req, res) => {
   function calculateCircleArea(agent){
     let radius = agent.parameters.radius;
     let result = Math.PI * Math.pow(radius, 2);
-    agent.add(`รัศมีของวงกลมคือ ${radius} พื้นที่ของวงกลมคือ ${result.toFixed(2)}`)
+    agent.add(`รัศมีของวงกลมคือ ${radius} พื้นที่ของวงกลมคือ ${result.toFixed(2) + "ตร.ซม."}`)
   }
 
   let intentMap = new Map();
