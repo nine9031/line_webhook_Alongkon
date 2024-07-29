@@ -194,7 +194,7 @@ app.post("/webhook", (req, res) => {
   intentMap.set("Default Fallback Intent", fallback);
   intentMap.set("BMI - custom - YES", bodyMassIndex);
   intentMap.set("Area - rectangle - custom - yes", calculateRectangleArea);
-  intentMap.set("Area - triangle - custom - yes", calculateTriangleArea);
+  intentMap.set("Area - triangle. - custom - yes", calculateTriangleArea);
   intentMap.set("Area - circle - custom - yes", calculateCircleArea);
   agent.handleRequest(intentMap);
 });
