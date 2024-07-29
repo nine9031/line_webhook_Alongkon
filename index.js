@@ -150,26 +150,20 @@ app.post("/webhook", (req, res) => {
     let length = agent.parameters.length;
     let result = wide * length;
     agent.add(
-      "พื้นที่รูปสี่เหลี่ยมขนาด กว้าง" +
-        wide +
-        " ซม. ยาว " +
-        length +
-        " =  " +
-        result +
-        "ตร.ซม." );
+      "พื้นที่รูปสี่เหลี่ยมขนาด กว้าง" + wide + " ซม. ยาว " + length + " =  " + result + " ตร.ซม." );
   }
 
   function calculateTriangleArea(agent){
     let base = agent.parameters.base;
     let height = agent.parameters.height;
     let result = 0.5 * (base * height);
-    agent.add(`พื้นที่สามเหลี่ยม ฐาน ${base} ซม ความสูง ${height} ซม result: ${result}`)
+    agent.add(`พื้นที่สามเหลี่ยม ฐาน ${base} ซม ความสูง ${height} ซม result: ${result + " ตร.ซม.}`)
   }
 
   function calculateCircleArea(agent){
     let radius = agent.parameters.radius;
     let result = Math.PI * Math.pow(radius, 2);
-    agent.add(`รัศมีของวงกลมคือ ${radius} พื้นที่ของวงกลมคือ ${result.toFixed(2) + "ตร.ซม."}`)
+    agent.add(`รัศมีของวงกลมคือ ${radius} พื้นที่ของวงกลมคือ ${result.toFixed(2) + " ตร.ซม."}`)
   }
 
   let intentMap = new Map();
