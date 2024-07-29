@@ -159,34 +159,17 @@ app.post("/webhook", (req, res) => {
         "ตร.ซม." );
   }
 
-  function calculateTriangleArea(agent) {
+  function calculateTriangleArea(agent){
     let base = agent.parameters.base;
     let height = agent.parameters.height;
-    let result = base * height;
-    agent.add(`พื้นที่สามเหลี่ยมฐาน ${base} ซม สูง ${height}ซม`);
-    agent.add(`=${result}ตารางเซนติเมตร`);
+    let result = 0.5 * (base * height);
+    agent.add(`พื้นที่สามเหลี่ยม ฐาน ${base} ซม ความสูง ${height} ซม result: ${result}`)
   }
 
-  function calculateCircleArea(agent) {
-    // รับค่ารัศมีจากพารามิเตอร์
-    let radius = agent.parameters.Radius;
-
-    // ตรวจสอบว่าค่าที่รับมาถูกต้อง
-    if (typeof radius === 'number' && radius > 0) {
-      // คำนวณพื้นที่วงกลม
-      let result = Math.PI * radius * radius;
-
-      // สร้างข้อความตอบกลับ
-      agent.add(`รัศมีของวงกลมคือ ${radius} เซนติเมตร`);
-      agent.add(`พื้นที่ของวงกลมคือ ${result.toFixed(2)} ตารางเซนติเมตร`);
-
-      // แสดงผลลัพธ์ในคอนโซล
-      console.log(`รัศมี: ${radius} เซนติเมตร`);
-      console.log(`พื้นที่: ${result.toFixed(2)} ตารางเซนติเมตร`);
-    } else {
-      // แสดงข้อความข้อผิดพลาดถ้าค่ารัศมีไม่ถูกต้อง
-      agent.add(`ค่ารัศมีไม่ถูกต้อง กรุณาใส่ค่ารัศมีที่เป็นบวก`);
-    }
+  function calculateCircleArea(agent){
+    let radius = agent.parameters.radius;
+    let result = Math.PI * Math.pow(radius, 2);
+    agent.add(`รัศมีของวงกลมคือ ${radius} พื้นที่ของวงกลมคือ ${result.toFixed(2)}`)
   }
 
   let intentMap = new Map();
